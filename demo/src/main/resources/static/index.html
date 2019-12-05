@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+Formulario para teste do Selenium
+
+<form>
+	<br />	
+	<div> 
+		<label for="input_nome">Nome: </label>
+		<input type="text" id="input_nome"> 
+	</div>
+	<br />
+	<div> 
+		<label for="input_idade">Idade: </label> 
+		<input type="number" id="input_idade"> 
+	</div>
+	<br />
+	<div>
+		<input type="button" value="Enviar" id="btn_envio" onclick="validaDados()">
+		<button type="reset" id="btn_reset" onclick="limpaForm()" >Limpar</button>
+	</div>
+</form>
+<br><br>
+<div id="dados_validos" style="display: none;">
+Dados validos!
+</div>
+
+<div id="dados_invalidos" style="display: none;">
+Dados invalidos!
+</div>
+</body>
+
+<script type="text/javascript">
+function validaDados() {
+	if (input_nome.value != '' && input_idade.value != '') {
+		document.getElementById("dados_validos").style.display = 'inline';
+		document.getElementById("dados_invalidos").style.display = 'none';
+	} else {
+		document.getElementById("dados_invalidos").style.display = 'inline';
+		document.getElementById("dados_validos").style.display = 'none';
+	}
+}
+
+function limpaForm() {
+	input_nome.value = '';
+	input_idade.value = '';
+	document.getElementById("dados_validos").style.display = 'none';
+	document.getElementById("dados_invalidos").style.display = 'none';
+}
+</script>
+</html>
